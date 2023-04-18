@@ -1,3 +1,34 @@
+const merge = (left, right) => {
+
+    let result = [];
+
+    let leftPointer = left.length;
+    let rightPointer = right.length;
+
+    let i = 0; let j = 0; let k = 0;
+   
+    while (i < leftPointer && j < rightPointer) {
+
+        if (left[i] < right[j]) {
+            result[k++] = left[i++];
+        } else {
+            result[k++] = right[j++]
+        }
+
+    }
+
+    for (; i < leftPointer; i++) {
+        result[k++] = left[i]
+    }
+
+    for (; j < rightPointer; j++) {
+        result[k++] = right[j]
+    }
+
+    return result
+
+}
+
 const mergeSort = (arr) => {
 
     if (arr.length === 0) return 'Cannot sort an empty array XD'
@@ -10,34 +41,4 @@ const mergeSort = (arr) => {
     return merge(mergeSort(leftSide), mergeSort(rightSide))
 }
 
-console.log(mergeSort([1,2,3,4,5,6,7,8]));
-
-const merge = (leftArr, rightArr) => {
-
-    const result = [];
-
-    leftPointer = 0;
-    rightPointer = 0;
-
-    while (leftPointer < leftArr.length && rightPointer < rightArr.length) {
-        if (leftArr[leftPointer] < rightArr[rightPointer]) {
-            result.push(leftArr[leftPointer])
-            leftPointer++
-        } else {
-            result.push(rightArr[rightPointer])
-            rightPointer++
-        }
-    }
-
-    while (leftPointer < leftArr.length) {
-        result.push(leftArr[leftPointer])
-        leftPointer++
-    }
-
-    while (rightPointer < rightArr.length) {
-        result.push(rightArr[rightPointer])
-        rightPointer++
-    }
-
-    return result;
-}
+console.log(mergeSort([9,8,7,2,3,6,0,4,5,3,23,18,12]));

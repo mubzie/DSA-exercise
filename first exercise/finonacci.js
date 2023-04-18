@@ -1,6 +1,4 @@
-const fibs =  (n) => {
-    
-let fibArr = [0,1] 
+const fibs = (n, fibArr = [0,1]) => {
 
 for (let i = 2; n > fibArr.length; i++) {
     fibArr[i] = fibArr[i - 2] + fibArr[i - 1];
