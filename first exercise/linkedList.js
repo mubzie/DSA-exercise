@@ -1,7 +1,7 @@
 const linkedListFactory = () => {
 
     let head = null;
-    let length = 0;
+    let tail = null;
 
     const append = (value) => 
 }
