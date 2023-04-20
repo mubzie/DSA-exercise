@@ -1,12 +1,4 @@
-const linkedListFactory = () => {
-
-    let head = null;
-    let tail = null;
-
-    const append = (value) => 
-}
-
-const nodeFactory = (value, next) => {
+const nodeFactory = (value) => {
 
     value = null
     next = null
@@ -17,6 +9,15 @@ const nodeFactory = (value, next) => {
     }
 
 }
+
+const linkedListFactory = () => {
+
+    let head = null;
+    let tail = null;
+
+    const append = (value) => 
+}
+
 
 const Node = nodeFactory()
 console.log(Node.nextNode)
