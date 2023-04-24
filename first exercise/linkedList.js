@@ -45,7 +45,7 @@ const linkedListFactory = () => {
         let current = _head
 
         if (current.next !== null) {
-            return {'value': current.value}
+            return {'value': current.value, 'next': current.next.value}
         }
     }
     
@@ -60,7 +60,7 @@ const linkedListFactory = () => {
     }
     
     const at = (value) => {
-            return Object.values(_head)[value]
+        return Object.values(_head)[value]
     }
 
     return {
