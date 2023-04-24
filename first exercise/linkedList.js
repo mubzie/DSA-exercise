@@ -63,6 +63,20 @@ const linkedListFactory = () => {
         return Object.values(_head)[value]
     }
 
+    const pop = () => {
+        if(_head === null) return null
+        if(_head.next === null) return null
+        
+        let current = _head
+
+        while (current.next.next !== null) {
+            current = current.next
+        }
+        current.next = null
+        length--
+
+    }
+
     return {
         append,
         prepend,
@@ -70,7 +84,8 @@ const linkedListFactory = () => {
         size,
         head,
         tail,
-        at
+        at,
+        pop
     }
 }
 
