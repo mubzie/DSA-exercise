@@ -42,7 +42,11 @@ const linkedListFactory = () => {
     }
 
     const head = () => {
-        return _head.value
+        let current = _head
+
+        if (current.next !== null) {
+            return {'value': current.value}
+        }
     }
     
     const tail = () => {
@@ -51,7 +55,7 @@ const linkedListFactory = () => {
         while (current.next !== null) {
             current = current.next
         }
-        return current.value
+        return current
 
     }
     
