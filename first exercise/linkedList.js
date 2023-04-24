@@ -1,7 +1,4 @@
-const nodeFactory = (value) => {
-
-    value = null
-    next = null
+const nodeFactory = (value = null, next = null) => {
 
     return {
         value,
@@ -14,7 +11,7 @@ const linkedListFactory = () => {
     let _head = null;
     let length = 0;
 
-    const getHead = () => {
+    const getList = () => {
         return _head
     }
 
@@ -45,16 +42,17 @@ const linkedListFactory = () => {
     }
 
     const head = () => {
-        if (_head !== null) {
-            return Object.values(_head)[0]
-        }
+        return _head.value
     }
     
     const tail = () => {
         let current = _head
-        if (current.next === null) {
-            return current
+
+        while (current.next !== null) {
+            current = current.next
         }
+        return current.value
+
     }
     
     const at = (value) => {
@@ -64,7 +62,7 @@ const linkedListFactory = () => {
     return {
         append,
         prepend,
-        getHead,
+        getList,
         size,
         head,
         tail,
@@ -73,5 +71,10 @@ const linkedListFactory = () => {
 }
 
 
-const Node = nodeFactory()
-console.log(Node.nextNode)
+const linkedList = linkedListFactory()
+linkedList.append(2)
+linkedList.append(3)
+linkedList.append(4)
+linkedList.append(5)
+linkedList.append(6)
+linkedList.prepend(7)
