@@ -59,8 +59,17 @@ const linkedListFactory = () => {
 
     }
     
-    const at = (value) => {
-        return Object.values(_head)[value]
+    const at = (index) => {
+        let current = _head
+        let count = 0
+
+        while (current !== null) {
+            if (count === index) {
+                return current
+            }
+            count++
+            current  = current.next
+        }
     }
 
     const pop = () => {
@@ -96,6 +105,7 @@ const linkedListFactory = () => {
         size,
         head,
         tail,
+        at,
         pop,
         contains
     }
