@@ -112,6 +112,21 @@ const linkedListFactory = () => {
         }
     }
 
+    const toString = () => {
+        let current = _head 
+        let string = ''
+
+        while (current !== null) {
+            string += `( ${current.value} ) -> `
+            if (current.next === null) {
+                string += `null`
+            }
+            current = current.next
+        }
+        
+        return string
+    }
+
     return {
         append,
         prepend,
@@ -121,15 +136,10 @@ const linkedListFactory = () => {
         at,
         pop,
         contains,
-        find
+        find,
+        toString
     }
 }
 
 
 const linkedList = linkedListFactory()
-linkedList.append(2)
-linkedList.append(3)
-linkedList.append(4)
-linkedList.append(5)
-linkedList.append(6)
-linkedList.prepend(7)
