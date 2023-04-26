@@ -71,7 +71,7 @@ const linkedListFactory = () => {
             current  = current.next
         }
     }
-
+    
     const pop = () => {
         if(_head === null || _head.next === null) return null
         
@@ -84,19 +84,32 @@ const linkedListFactory = () => {
         length--
 
     }
-
+    
     const contains = (value) => {
         let current = _head
-
+        
         while (current !== null) {
             if (current.value === value) {
                 return true
             }
             current = current.next
         }
-
+        
         return false
+        
+    }
+    
+    const find = (value) => {
+        let current = _head
+        let count = 0
 
+        while (current !== null) {
+            if (current.value === value) {
+                return count
+            }
+            count++
+            current  = current.next
+        }
     }
 
     return {
@@ -107,7 +120,8 @@ const linkedListFactory = () => {
         tail,
         at,
         pop,
-        contains
+        contains,
+        find
     }
 }
 
